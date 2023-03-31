@@ -15,9 +15,9 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
     try {
-        const { first_name, last_name, age, citizenID, course, score } = req.body;
+        const { first_name, last_name, age, citizenId, course, score } = req.body;
 
-        if( !first_name || !last_name || !age || !citizenID || !course || !score ) {
+        if( !first_name || !last_name || !age || !citizenId || !course || !score ) {
             return res 
                 .status(400)
                 .send({ status: "error", error: "missing properties" });
@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
             first_name,
             last_name,
             age,
-            citizenID,
+            citizenId,
             course,
             score,
         };
